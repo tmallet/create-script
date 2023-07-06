@@ -29,7 +29,7 @@ yargs
         return
       }
       await fs.mkdirSync(rootFolder)
-      console.log(`${rootFolder} créé`)
+      console.log(`${rootFolder} file created`)
       await fs.writeFileSync(
         `${rootFolder}/package.json`,
         `{
@@ -55,7 +55,7 @@ yargs
 }
 `
       )
-      console.log(`${rootFolder}/package.json créé`)
+      console.log(`${rootFolder}/package.json file created`)
       await fs.writeFileSync(
         `${rootFolder}/.prettierrc.cjs`,
         `module.exports = {
@@ -67,7 +67,7 @@ yargs
   tabWidth: 2,
 }`
       )
-      console.log(`${rootFolder}/.prettierrc.cjs créé`)
+      console.log(`${rootFolder}/.prettierrc.cjs file created`)
       await fs.writeFileSync(
         `${rootFolder}/build.mjs`,
         `import * as esbuild from 'esbuild'
@@ -84,7 +84,7 @@ await esbuild.build({
 })
 `
       )
-      console.log(`${rootFolder}/build.mjs créé`)
+      console.log(`${rootFolder}/build.mjs file created`)
       await fs.writeFileSync(
         `${rootFolder}/tsconfig.json`,
         `{
@@ -100,16 +100,16 @@ await esbuild.build({
 }
 `
       )
-      console.log(`${rootFolder}/tsconfig.json créé`)
+      console.log(`${rootFolder}/tsconfig.json file created`)
       await fs.mkdirSync(`${rootFolder}/src`)
-      console.log(`${rootFolder}/src créé`)
+      console.log(`${rootFolder}/src file created`)
       await fs.writeFileSync(
         `${rootFolder}/src/index.ts`,
         `#!/usr/bin/env node
 
 `
       )
-      console.log(`${rootFolder}/src/index.ts créé`)
+      console.log(`${rootFolder}/src/index.ts file created`)
     }
   )
   .help(true).argv
