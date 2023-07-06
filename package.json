@@ -1,0 +1,21 @@
+{
+  "name": "create-script",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.mjs && cp build/index.js /usr/local/bin/create-script && chmod a+x /usr/local/bin/create-script"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.0",
+    "@types/yargs": "^17.0.24",
+    "esbuild": "^0.18.11",
+    "prettier": "^3.0.0",
+    "tiny-glob": "^0.2.9",
+    "tsc": "^2.0.4",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
