@@ -107,6 +107,35 @@ await esbuild.build({
         `${rootFolder}/src/index.ts`,
         `#!/usr/bin/env node
 
+const packageJson = require('../package.json')
+const yargs = require('yargs')
+
+yargs
+  .scriptName('${name}')
+  .usage('$0 <cmd> [args]')
+  .version(packageJson.version)
+  .command(
+    'cmd [param]',
+    'get param',
+    (yargs: any) => {
+      yargs
+        .positional('param', {
+          type: 'string',
+          default: 'default',
+          describe: 'describe',
+        })
+    },
+    async (argv: any) => {}
+  )
+  .command(
+    '*',
+    '',
+    (yargs: any) => {},
+    async ({ sessionId }: { sessionId: string }) => {
+      yargs.showHelp()
+    }
+  )
+  .help(true).argv
 `
       )
       console.log(`${rootFolder}/src/index.ts file created`)
