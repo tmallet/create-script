@@ -25,7 +25,7 @@ yargs
       const rootFolder = `${process.cwd()}/${name}`
       const exists = await fs.existsSync(rootFolder)
       if (exists) {
-        console.log(`Le script ${name} existe déjà.`)
+        console.log(`Script ${name} already exists.`)
         return
       }
       await fs.mkdirSync(rootFolder)
